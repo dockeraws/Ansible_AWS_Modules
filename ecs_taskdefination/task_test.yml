@@ -1,0 +1,6 @@
+---
+- hosts: local
+  roles: 
+   - ecs_task
+  environment:
+    AWS_REGION: us-west-2 
