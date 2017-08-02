@@ -6,16 +6,21 @@
     - name: simple-app
       cpu: 1
       essential: true
-      image: "httpd:2.4"
+      image: "555075547139.dkr.ecr.us-west-2.amazonaws.com/phptestserver:0.1"
       memory: 300
       mountPoints:
       - containerPath: /usr/local/apache2/htdocs
         sourceVolume: my-vol
       portMappings:
-      - containerPort: 80
+      - containerPort: 6022
         hostPort: 80
+      - containerPort: 6023
+        hostPort: 22
+      - containerPort: 8081
+        hostPort: 8081
+ 
     volumes:
     - name: my-vol
-    family: test2-taskdefinition
+    family: test-php
     state: present
   register: task_output

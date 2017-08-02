@@ -4,7 +4,7 @@
     - name: Start a task
       ecs_task:
         operation: start
-        cluster: docker-testserver 
+        cluster: docker-aws1 
         task_definition: test2-taskdefinition
         task: "arn:aws:ecs:us-west-2:555075547139:task/6feb2968-3ebb-40e9-a927-27430c8a589b"
 

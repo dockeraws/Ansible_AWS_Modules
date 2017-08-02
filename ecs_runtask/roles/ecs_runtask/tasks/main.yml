@@ -3,8 +3,8 @@
 - name: Run task
   ecs_task:
     operation: run
-    cluster: docker-testserver
-    task_definition: test2-taskdefinition
+    cluster: docker-aws1
+    task_definition: test-php
     count: 1
     started_by: ansible_user
   register: task_output
