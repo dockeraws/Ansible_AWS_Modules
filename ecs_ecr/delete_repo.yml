@@ -1,0 +1,9 @@
+---
+- hosts: local
+  gather_facts: False
+  connection: local
+  tasks:
+    - name: ecr-repo
+      ecs_ecr: name=super/cool state=absent
+  environment: 
+    AWS_REGION: us-west-2

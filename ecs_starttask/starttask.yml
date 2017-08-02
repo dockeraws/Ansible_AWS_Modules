@@ -1,15 +1,19 @@
 ---
 - hosts: local
-  tasks: 
+  connection: local
+  tasks:
+    - ecs_service_facts:
+        cluster: test-automation
+        service: test-auto
+        details: true 
     - name: Start a task
       ecs_task:
         operation: start
-        cluster: docker-aws1 
-        task_definition: test2-taskdefinition
-        task: "arn:aws:ecs:us-west-2:555075547139:task/6feb2968-3ebb-40e9-a927-27430c8a589b"
-
+        cluster: test-automation
+        task_definition: test-auto
+        task: arn:aws:ecs:us-west-2:555075547139:task/1240bfcb-b26b-4273-968e-4724c0f9bf0a
         container_instances: 
-        - arn:aws:ecs:us-west-2:555075547139:container-instance/11607e48-5286-4a3d-b914-42a7913880be
+        - arn:aws:ecs:us-west-2:555075547139:container-instance/27d7a662-c31b-48a8-b93b-d914738463cc
         started_by: ansible_user
       register: task_output
   environment:

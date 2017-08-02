@@ -4,8 +4,8 @@
     - name: Stop a task
       ecs_task:
         operation: stop
-        cluster: docker-testserver
-        task_definition: test2-taskdefinition
-        task: "arn:aws:ecs:us-west-2:555075547139:task/6feb2968-3ebb-40e9-a927-27430c8a589b"
+        cluster: test-automation
+        task_definition: test-auto
+        task: "arn:aws:ecs:us-west-2:555075547139:task/1240bfcb-b26b-4273-968e-4724c0f9bf0a"
   environment:
     AWS_REGION: us-west-2  
