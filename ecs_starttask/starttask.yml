@@ -11,9 +11,9 @@
         operation: start
         cluster: test-automation
         task_definition: test-auto
-        task: arn:aws:ecs:us-west-2:555075547139:task/1240bfcb-b26b-4273-968e-4724c0f9bf0a
+        task: arn:aws:ecs:us-west-2:5550755471391:task/1240bfcb-b26b-4273-968e-4724c0f9bf0a
         container_instances: 
-        - arn:aws:ecs:us-west-2:555075547139:container-instance/27d7a662-c31b-48a8-b93b-d914738463cc
+        - arn:aws:ecs:us-west-2:5550755471391:container-instance/27d7a662-c31b-48a8-b93b-d914738463cc
         started_by: ansible_user
       register: task_output
   environment:
