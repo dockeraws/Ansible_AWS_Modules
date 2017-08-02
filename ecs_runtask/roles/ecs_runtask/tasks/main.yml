@@ -1,0 +1,10 @@
+---
+# tasks file for ecs_starttask
+- name: Run task
+  ecs_task:
+    operation: run
+    cluster: docker-testserver
+    task_definition: test2-taskdefinition
+    count: 1
+    started_by: ansible_user
+  register: task_output

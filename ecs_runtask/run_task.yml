@@ -1,0 +1,7 @@
+---
+- hosts: local
+  roles: 
+   - ecs_runtask
+  environment:
+    AWS_REGION: us-west-2 
+

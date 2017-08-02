@@ -4,7 +4,7 @@
   ecs_taskdefinition:
     containers:
     - name: simple-app
-      cpu: 10
+      cpu: 1
       essential: true
       image: "httpd:2.4"
       memory: 300
@@ -16,6 +16,6 @@
         hostPort: 80
     volumes:
     - name: my-vol
-    family: test2-cluster-taskdefinition
+    family: test2-taskdefinition
     state: present
   register: task_output
