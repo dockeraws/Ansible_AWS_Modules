@@ -4,5 +4,4 @@
    - ecs_runtask
   environment:
     AWS_REGION: us-west-2 
-    AWS_ACCESS_KEY_ID: AKIAIAUJKTCXEQA7PKDA
-    AWS_SECRET_ACCESS_KEY: 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
+   
