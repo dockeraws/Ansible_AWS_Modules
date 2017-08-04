@@ -1,7 +1,19 @@
 ---
 - hosts: local
-  roles: 
-   - ecs_runtask
-  environment:
-    AWS_REGION: us-west-2 
+  connection: local
+  tasks:
+    - name: Run task
+      ecs_task:
+        operation: run
+        cluster: "{{ cluster_name }}"
+        task_definition: "{{ task_def }}"
+        count: 1
+        started_by: "{{ ansible_user }}"
+      register: task_output 
+  environment: 
+    EC2_REGION: us-west-2
+  vars: 
+    cluster_name: testcluster
+    task_def: test_task
    
+

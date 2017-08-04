@@ -4,8 +4,12 @@
     - name: Stop a task
       ecs_task:
         operation: stop
-        cluster: test-automation
-        task_definition: test-auto
-        task: "arn:aws:ecs:us-west-2:555075547139:task/1240bfcb-b26b-4273-968e-4724c0f9bf0a"
+        cluster: "{{ cluster_name }}"
+        task_definition: "{{ task_def }}"
+        task: "{{ task_arn }}"
   environment:
     AWS_REGION: us-west-2  
+  vars:
+    cluster_name: testcluster
+    task_def: testtask
+    task_arn: arn:aws:ecs:us-west-2:967879827194:task/92a05b77-fe70-4c7a-bba3-392531acf9b6

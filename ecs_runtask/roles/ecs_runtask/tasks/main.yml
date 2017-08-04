@@ -3,8 +3,13 @@
 - name: Run task
   ecs_task:
     operation: run
+    aws_region: us-west-2 
+    
+    
     cluster: test-automation
-    task_definition: test-auto
+    container_instances: 
+    - arn:aws:ecs:us-west-2:967879827194:container-instance/1164d637-7831-46d0-a5ed-80a45578536d
+    task_definition: test-php
     count: 1
-    started_by: ansible_user
+    started_by: "{{ ansible_user }}"
   register: task_output

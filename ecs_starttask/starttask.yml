@@ -1,20 +1,25 @@
 ---
 - hosts: local
-  connection: local
+  connection: local  
   tasks:
-    - ecs_service_facts:
-        cluster: test-automation
-        service: test-auto
-        details: true 
     - name: Start a task
       ecs_task:
         operation: start
-        cluster: test-automation
-        task_definition: test-auto
-        task: arn:aws:ecs:us-west-2:5550755471391:task/1240bfcb-b26b-4273-968e-4724c0f9bf0a
+        cluster: "{{ cluster_name }}"
+        task_definition: "{{ task_def }}"
+        task: "{{ task_arn }}" 
+ 
         container_instances: 
-        - arn:aws:ecs:us-west-2:5550755471391:container-instance/27d7a662-c31b-48a8-b93b-d914738463cc
-        started_by: ansible_user
+        - "{{ container_instance }}"
+        started_by: "{{ ansible_user }}"
       register: task_output
   environment:
-    AWS_REGION: us-west-2 
+    AWS_REGION: us-west-2
+    EC2_SECURITY_TOKEN:  
+  vars:
+    cluster_name: testcluster
+    task_def: test_task
+    
+    container_instance: arn:aws:ecs:us-west-2:967879827194:container-instance/1164d637-7831-46d0-a5ed-80a45578536d
+    task_arn: arn:aws:ecs:us-west-2:967879827194:task/b70868b0-9871-48cc-9fd4-b7d134bbff38 
+    

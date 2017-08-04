@@ -3,10 +3,10 @@
 - name: Create task definition
   ecs_taskdefinition:
     containers:
-    - name: simple-app
+    - name: test-auto
       cpu: 1
       essential: true
-      image: "555075547139.dkr.ecr.us-west-2.amazonaws.com/phptestserver:0.1"
+      image: "httpd:latest"
       memory: 300
       mountPoints:
       - containerPath: /usr/local/apache2/htdocs
