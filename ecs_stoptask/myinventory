@@ -1,0 +1,11 @@
+[local]
+ 
+localhost
+
+[local:vars]
+
+
+cluster_name=test-automation
+task_def=testapache 
+container_instance= [2c3f3f0d-76db-42b2-8fdd-9edf1595e62e]
+task_arn=arn:aws:ecs:us-west-2:967879827194:task/ed016036-a8b6-4f83-b95c-57c59fbd02fd

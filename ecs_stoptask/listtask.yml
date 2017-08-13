@@ -1,0 +1,12 @@
+---
+- hosts: local
+  connection: local
+  tasks:
+    - name: listing tasks
+      ecs_task:
+        operation: listtask
+        cluster: test-automation
+        task_definition: test_task
+      register: task_list
+    - debug: 
+        var: task_list

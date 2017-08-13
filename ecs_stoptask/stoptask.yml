@@ -9,7 +9,4 @@
         task: "{{ task_arn }}"
   environment:
     AWS_REGION: us-west-2  
-  vars:
-    cluster_name: testcluster
-    task_def: testtask
-    task_arn: arn:aws:ecs:us-west-2:967879827194:task/92a05b77-fe70-4c7a-bba3-392531acf9b6
+

@@ -1,0 +1,6 @@
+---
+- hosts: local
+  tasks:
+    - name: start task via cli
+      shell: /home/ansible/Ansible_AWS_Modules/ecs_stoptask/cli.sh
+     

@@ -12,8 +12,5 @@
       register: task_output 
   environment: 
     EC2_REGION: us-west-2
-  vars: 
-    cluster_name: test-automation
-    task_def: test_task
    
 

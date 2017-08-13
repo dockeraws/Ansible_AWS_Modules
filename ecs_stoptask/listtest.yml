@@ -1,0 +1,17 @@
+---
+- hosts: local
+  connection: local
+  tasks:
+    - name: list of  task
+      ecs_task:
+        operation: listtask
+        cluster: "{{ cluster_name }}"
+        task_definition: "{{ task_def }}"
+        started_by: "{{ ansible_user }}"
+      register: list_taskarn
+    - debug: 
+        var: list_taskarn 
+  environment:
+    AWS_REGION: us-west-2  
+  
+  
